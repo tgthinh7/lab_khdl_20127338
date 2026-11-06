@@ -18,7 +18,7 @@ jobs:
         python-version: 3.12
         
     - name: Jupyter Book Installation
-      run: pip install -U jupyter-book
+      run: pip install jupyter-book==0.15.1
       
     - name: Build book
       run: jupyter-book build .
