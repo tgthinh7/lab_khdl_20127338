@@ -1,0 +1,30 @@
+name: deploy-book
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Python Installation
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+        
+    - name: Jupyter Book Installation
+      run: pip install -U jupyter-book
+      
+    - name: Build book
+      run: jupyter-book build .
+      
+    - name: Export GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: _build/html
