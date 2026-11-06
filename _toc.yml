@@ -1,4 +1,4 @@
 format: jb-book
-root: README 
+root: README
 chapters:
-  - file: Milestone_1 
+  - file: Milestone_1
