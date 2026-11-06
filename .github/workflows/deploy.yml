@@ -15,7 +15,7 @@ jobs:
     - name: Python Installation
       uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: 3.12
         
     - name: Jupyter Book Installation
       run: pip install -U jupyter-book
